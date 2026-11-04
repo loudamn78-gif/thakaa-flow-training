@@ -1,0 +1,37 @@
+msg = input().strip()
+
+if not msg.startswith("ZT:"):
+    print("Not a message from planet Zeta")
+else:
+    raw = msg[3:].strip()
+    dec = raw.replace("4", "a").replace("3", "e").replace("0", "o").replace("1", "i")
+    
+    l_msg = dec.lower()
+    if "help" in l_msg:
+        t = "DISTRESS"
+    elif "hello" in l_msg:
+        t = "GREETING"
+    elif "?" in dec:
+        t = "QUESTION"
+    else:
+        t = "UNKNOWN"
+        
+    ex_count = dec.count("!")
+    if ex_count >= 3:
+        urg = "HIGH"
+    elif ex_count >= 1:
+        urg = "MEDIUM"
+    else:
+        urg = "LOW"
+        
+    letters = len(dec.replace(" ", ""))
+    
+    print(f"Message: {msg}")
+    print(f"Message: {dec.upper()}")
+    print(f"Letters (no spaces): {letters}")
+    print(f"Type: {t}")
+    print(f"Urgency: {urg}")
+    
+    rev = "ecaep ni emoc ew"
+    enc_reply = rev.replace("a", "4").replace("e", "3").replace("o", "0")
+    print(f"Encoded reply: EA: {enc_reply}")
