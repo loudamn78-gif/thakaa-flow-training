@@ -14,7 +14,7 @@ def is_valid_phone(phone):
     return phone.isdigit() and phone.startswith("05") and len(phone) == 10
 
 
-# اختبار الدوال
+# اختبار add_vat
 print("VAT Test:")
 print(add_vat(100))
 print(add_vat(250, 0.05))
@@ -22,6 +22,7 @@ print(add_vat(0))
 
 print("-" * 20)
 
+# اختبار format_price
 print("Price Test:")
 print(format_price(1234.5))
 print(format_price(99))
@@ -29,6 +30,7 @@ print(format_price(1000000))
 
 print("-" * 20)
 
+# اختبار is_valid_phone
 print("Phone Test:")
 print(is_valid_phone("0551234567"))
 print(is_valid_phone("055 123 4567"))
@@ -36,12 +38,12 @@ print(is_valid_phone("05abc12345"))
 
 print("-" * 20)
 
-# استخدام دالتين مع بعض
+# استخدام الدالتين معاً
 print(format_price(add_vat(1000)))
 
 print("-" * 20)
 
-# طباعة الأرقام الصحيحة فقط
+# عرض الأرقام الصحيحة فقط
 phones = [
     "0551234567",
     "0661234567",
